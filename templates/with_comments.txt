@@ -1,0 +1,18 @@
+
+These are all posts:
+
+{% for post in posts %}
+Date: {{post.date_created}}, Id: {{post.id}}
+Header: {{post.header}}
+    Text: {{post.content}}
+        {%if comments%}
+    Комментарии под постом:{% for comment in comments %}
+                           {% if comment.post_id == post.id %}
+        {{comment.date_created}}
+        {{comment.comment_text}}
+        {% endif %}{% endfor %}
+        {% else %}
+        Комментариев нет
+        {% endif %}  
+{% endfor %}
+

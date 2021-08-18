@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+    <!-- Bootstrap -->
+    
+    <!--link rel="stylesheet" href="static/bootstrap-5.1.0-dist/css/bootstrap.min.css') }}"!-->
+    <link rel="stylesheet" href="{{url_for('static', filename='bootstrap-5.1.0-dist/css/bootstrap.min.css')}}")>
+</head>
+
+<body>
+
+    {%for post in posts%}
+    <h3>
+      {{post.id}}||{{post.header}}
+        <small class="text-muted">{{post.date_created}}</small>
+      </h3>
+    <pre>{{post.content}}</pre>
+
+    
+    <!-- {% for comment in comments %}
+    {% if comment.post_id == post.id %}
+    <h6>
+      Комментарии к посту: 
+    </h6>
+    
+    {%endif%}
+    {%endfor%} -->
+    <h6> Комментарии к посту:</h6>
+    {% for comment in comments %} {% if comment.post_id == post.id %}
+    <br>{{comment.comment_text}}</br>
+    {%endif%}
+    {%endfor%}
+
+    {%endfor%}
+    
+
+    <!-- <form>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</body> -->

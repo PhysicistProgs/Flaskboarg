@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+    <!-- Bootstrap -->
+    
+    <!--link rel="stylesheet" href="static/bootstrap-5.1.0-dist/css/bootstrap.min.css') }}"!-->
+    <link rel="stylesheet" href="{{url_for('static', filename='bootstrap-5.1.0-dist/css/bootstrap.min.css')}}")>
+</head>
+
+
+<body>
+    <p></p>
+<div class="container-sm">
+    <p class="h1">new2ch</p>
+    <form method="POST">
+        
+        <div class="mb-3">
+            <label for="header" class="form-label">Введите название</label>
+            <textarea class="form-control" id="header" name="header" rows="1">Название</textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="content" class="form-label">Введите текст своего поста в поле ниже</label>
+            <textarea class="form-control" id="content" name="content" rows="3"></textarea>
+        </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+    
+
+</div>   
+</body>

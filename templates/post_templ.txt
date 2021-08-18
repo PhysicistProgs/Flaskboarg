@@ -1,0 +1,9 @@
+
+These are all posts:
+
+{% for post in posts %}
+Date: {{post.date_created}}, Id: {{post.id}}
+Header: {{post.header}}, 
+    Text: {{post.content}}
+
+{% endfor %}
